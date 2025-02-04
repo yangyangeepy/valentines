@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
+    <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
+    <style>
+        /* Style for the buttons and smooth transition */
+        #yes-button {
+            font-size: 18px; /* Initial font size */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        #yes-button.grow {
+            transform: scale(1.5); /* Make the button 1.5 times bigger */
+        }
+
+        #no-button {
+            font-size: 18px; /* Initial font size */
+        }
+
+        #question {
+            font-family: 'Sacramento', cursive;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #options button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="image-container"></div> <!-- Container for displaying images -->
+        <div id="text-container">
+            <div id="question">Will you be my valentine?</div> <!-- Question -->
+            <div id="options">
+                <button id="yes-button" onclick="selectOption('yes')">Yes</button> <!-- Yes button -->
+                <button id="no-button" onclick="selectOption('no')">No</button> <!-- No button -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(choice) {
+            if (choice === 'no') {
+                // When 'No' is clicked, add the 'grow' class to the 'Yes' button
+                document.getElementById('yes-button').classList.add('grow');
+            } else if (choice === 'yes') {
+                // Handle behavior for 'Yes' button if needed
+            }
+        }
+    </script>
+</body>
+</html>
