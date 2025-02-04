@@ -1,68 +1,76 @@
-/* style.css */
-
-/* Global styles */
+/* General Styles for the Body */
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
+    font-family: Arial, sans-serif; /* Use a clean sans-serif font for body text */
     text-align: center; /* Center-align text */
     margin: 0; /* Remove default margin */
-    background-color: #ffffff; /* Set background color to white */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    background-color: #ffffff; /* Default white background */
+    overflow: hidden; /* Prevent scrolling */
 }
 
+/* Container Style */
 #container {
     display: flex; /* Use flexbox layout */
     flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    height: 100vh; /* Make the container full viewport height */
-    background-color: #ffffff; /* Ensure container has a white background */
+    align-items: center; /* Center-align elements horizontally */
+    justify-content: center; /* Center-align elements vertically */
+    height: 100vh; /* Take up the full height of the viewport */
 }
 
-#image-container {
-    /* This container will hold the images */
-    margin-top: 20px;
-}
-
+/* Question Style */
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
-    font-size: 52px; /* Set font size for the question */
-    color: #333; /* Set question text color */
-    margin-bottom: 20px; /* Add space below the question */
+    font-family: 'Sacramento', cursive; /* Apply the cursive font from Google Fonts */
+    font-size: 52px; /* Large font size for the question */
+    color: #FB607F; /* Pink color for the question text */
+    margin-bottom: 30px; /* Space below the question */
 }
 
-#options {
-    margin-top: 20px; /* Add space above the options */
-}
-
+/* Button Styles */
 button {
-    padding: 10px 20px; /* Set padding for buttons */
-    margin: 0 10px; /* Set margin around buttons */
-    font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
-    background-color: #FB607F; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: none; /* Remove button border */
-    cursor: pointer; /* Set cursor to pointer on hover */
-    transition: transform 0.3s ease; /* Smooth transition for grow effect */
+    padding: 15px 30px; /* Add padding for larger clickable area */
+    margin: 10px 20px; /* Add space between buttons */
+    font-size: 26px; /* Large text for buttons */
+    font-family: 'Sacramento', cursive; /* Cursive font for buttons */
+    background-color: #FB607F; /* Pink background for buttons */
+    color: white; /* White text color */
+    border: none; /* Remove the button border */
+    border-radius: 10px; /* Rounded corners for buttons */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Button grows when clicked */
-button.grow {
-    transform: scale(1.5); /* Make the button 1.5 times bigger */
+/* Hover effect for buttons */
+button:hover {
+    background-color: #FF77A9; /* Lighter pink on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
 }
 
-/* Styling for the new "Thank You" message */
+/* "Thank You" Message Styling */
 #thank-you-message {
-    font-family: 'Sacramento', cursive; /* Same font as the buttons and question */
-    font-size: 40px; /* Adjust the size of the message */
-    color: #ffffff; /* White text color to match the theme */
-    margin-top: 20px; /* Add some space above the message */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: text shadow for readability */
+    font-family: 'Sacramento', cursive; /* Same cursive font as the buttons */
+    font-size: 40px; /* Adjust the size of the thank you message */
+    color: #ffffff; /* White text color */
+    margin-top: 20px; /* Space above the message */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional text shadow for better readability */
 }
 
-/* Styling for the cat-heart image */
-#image-container img {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    margin-top: 20px; /* Add space above the image */
+/* Style for Image Container */
+#image-container {
+    margin-top: 20px; /* Space above the image container */
+    width: 100%; /* Allow image to fill the width of the container */
+    max-width: 500px; /* Limit the width of the image */
+    height: auto; /* Maintain the aspect ratio of the image */
+    display: flex;
+    justify-content: center; /* Center the image */
+    align-items: center; /* Center the image vertically */
+}
+
+/* Hide the options section when not needed (when 'Yes' is clicked) */
+#options {
+    display: flex; /* Display the buttons in a row */
+    justify-content: center; /* Center buttons horizontally */
+    margin-top: 30px; /* Add space above the options */
+}
+
+#options button {
+    margin: 10px; /* Add space between buttons */
 }
