@@ -6,6 +6,7 @@ body {
     text-align: center; /* Center-align text */
     margin: 0; /* Remove default margin */
     background-color: #ffffff; /* Set background color to white */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
 #container {
@@ -18,13 +19,15 @@ body {
 }
 
 #image-container {
-    /* This container will hold the images (like the cat-heart gif) */
+    /* This container will hold the images */
+    margin-top: 20px;
 }
 
 #question {
     font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
     font-size: 52px; /* Set font size for the question */
-    color: #333; /* Dark color for the question */
+    color: #333; /* Set question text color */
+    margin-bottom: 20px; /* Add space below the question */
 }
 
 #options {
@@ -40,10 +43,15 @@ button {
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
-    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+    transition: transform 0.3s ease; /* Smooth transition for grow effect */
 }
 
-/* Styling for the "Thank You" message */
+/* Button grows when clicked */
+button.grow {
+    transform: scale(1.5); /* Make the button 1.5 times bigger */
+}
+
+/* Styling for the new "Thank You" message */
 #thank-you-message {
     font-family: 'Sacramento', cursive; /* Same font as the buttons and question */
     font-size: 40px; /* Adjust the size of the message */
@@ -52,22 +60,9 @@ button {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: text shadow for readability */
 }
 
-/* Style for the 'Yes' button when it grows */
-#yes-button.grow {
-    transform: scale(1.5); /* Make the 'Yes' button 1.5 times bigger */
-}
-
-/* Optional: Add smooth transition effect when clicking buttons */
-#yes-button, #no-button {
-    transition: transform 0.3s ease;
-}
-
-/* Style for the "No" button */
-#no-button {
-    font-size: 18px; /* Adjust size for the 'No' button */
-}
-
-/* Hide the question when 'Yes' is clicked */
-#question {
-    display: none;
+/* Styling for the cat-heart image */
+#image-container img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 20px; /* Add space above the image */
 }
