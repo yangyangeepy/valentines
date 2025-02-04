@@ -1,5 +1,6 @@
 /* style.css */
 
+/* Global styles */
 body {
     font-family: Arial, sans-serif; /* Fallback font family */
     text-align: center; /* Center-align text */
@@ -17,12 +18,13 @@ body {
 }
 
 #image-container {
-    /* This container will hold the images */
+    /* This container will hold the images (like the cat-heart gif) */
 }
 
 #question {
     font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
     font-size: 52px; /* Set font size for the question */
+    color: #333; /* Dark color for the question */
 }
 
 #options {
@@ -38,13 +40,34 @@ button {
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
 }
 
-/* Styling for the new "Thank You" message */
+/* Styling for the "Thank You" message */
 #thank-you-message {
     font-family: 'Sacramento', cursive; /* Same font as the buttons and question */
     font-size: 40px; /* Adjust the size of the message */
     color: #ffffff; /* White text color to match the theme */
     margin-top: 20px; /* Add some space above the message */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Optional: text shadow for readability */
+}
+
+/* Style for the 'Yes' button when it grows */
+#yes-button.grow {
+    transform: scale(1.5); /* Make the 'Yes' button 1.5 times bigger */
+}
+
+/* Optional: Add smooth transition effect when clicking buttons */
+#yes-button, #no-button {
+    transition: transform 0.3s ease;
+}
+
+/* Style for the "No" button */
+#no-button {
+    font-size: 18px; /* Adjust size for the 'No' button */
+}
+
+/* Hide the question when 'Yes' is clicked */
+#question {
+    display: none;
 }
