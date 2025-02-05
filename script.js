@@ -13,7 +13,11 @@ function selectOption(option) {
         // Create and display the "Thank You" message
         var message = document.createElement('div');
         message.id = 'thank-you-message';
-        message.innerHTML = 'YAYY! thankyew for always being there for me (˶˃ ᵕ ˂˶) .ᐟ.ᐟ';
+        message.innerHTML = 'YAYY! thankyeww for always being there for me.'; // Updated message
+        message.style.textAlign = 'center';  // Center the text
+        message.style.fontSize = '24px';     // Make the message readable
+        message.style.marginTop = '20px';    // Add some space
+        message.style.color = '#fff';        // Make sure the text is visible against the background
         document.body.appendChild(message); // Add the message to the body
     } else if (option === 'no') {
         // Increase the font size of the "Yes" button
