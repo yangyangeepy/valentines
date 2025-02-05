@@ -56,7 +56,7 @@ function displayCatHeart() {
     catHeartImage.alt = 'Cat Heart';
 
     catHeartImage.onload = function() {
-        imageContainer.innerHTML = ''; // Clear the previous image (if any)
+        imageContainer.innerHTML = ''; // Clear the previous "cat" image
         imageContainer.appendChild(catHeartImage); // Add the "cat-heart" gif to the image container
         document.getElementById('options').style.display = 'none'; // Hide the options
     };
