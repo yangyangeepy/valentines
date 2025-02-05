@@ -7,7 +7,7 @@ function selectOption(option) {
         // Hide the question
         document.getElementById('question').style.display = 'none';
 
-        // Call function to display the gif and message
+        // Call function to display the cat-heart.gif after the "cat" image
         displayCatHeart();
         
         // Create and display the "Thank You" message
@@ -24,17 +24,34 @@ function selectOption(option) {
     }
 }
 
-// Function to display the cat-heart.gif
+// Function to display the cat image first, then cat-heart gif after clicking "Yes"
+function displayCat() {
+    var imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = ''; // Clear any previous content
+
+    var catImage = new Image();
+    catImage.src = 'cat.gif';  // Path for the "cat" image
+    catImage.alt = 'Cat Image';
+
+    catImage.onload = function() {
+        imageContainer.appendChild(catImage); // Add the "cat" gif to the image container
+    };
+}
+
+// Function to display the cat-heart.gif after "Yes" is clicked
 function displayCatHeart() {
     var imageContainer = document.getElementById('image-container');
     imageContainer.innerHTML = ''; // Clear any previous content
 
     var catHeartImage = new Image();
-    catHeartImage.src = 'cat-heart.gif'; // Update this path if needed
+    catHeartImage.src = 'cat-heart.gif';  // Path for the "cat-heart" image
     catHeartImage.alt = 'Cat Heart';
-    
+
     catHeartImage.onload = function() {
-        imageContainer.appendChild(catHeartImage); // Add the gif to the image container
+        imageContainer.appendChild(catHeartImage); // Add the "cat-heart" gif to the image container
         document.getElementById('options').style.display = 'none'; // Hide the options
     };
 }
+
+// Call displayCat() when the page loads
+window.onload = displayCat;
