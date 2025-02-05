@@ -33,7 +33,7 @@ function selectOption(option) {
     }
 }
 
-// Function to display the cat image first
+// Function to display the cat image first (when the page loads)
 function displayCat() {
     var imageContainer = document.getElementById('image-container');
     imageContainer.innerHTML = ''; // Clear any previous content
@@ -56,6 +56,7 @@ function displayCatHeart() {
     catHeartImage.alt = 'Cat Heart';
 
     catHeartImage.onload = function() {
+        imageContainer.innerHTML = ''; // Clear the previous image (if any)
         imageContainer.appendChild(catHeartImage); // Add the "cat-heart" gif to the image container
         document.getElementById('options').style.display = 'none'; // Hide the options
     };
