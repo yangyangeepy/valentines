@@ -1,6 +1,8 @@
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
+        console.log("Yes button clicked!"); // Debugging line
+
         // Change the background color to pink when 'Yes' is clicked
         document.body.style.backgroundColor = '#FB607F';
 
@@ -19,6 +21,8 @@ function selectOption(option) {
         message.style.marginTop = '20px';    // Add some space
         message.style.color = '#fff';        // Make sure the text is visible against the background
         document.body.appendChild(message); // Add the message to the body
+
+        console.log("Message created:", message); // Debugging line
     } else if (option === 'no') {
         // Increase the font size of the "Yes" button
         var yesButton = document.getElementById('yes-button');
@@ -28,7 +32,7 @@ function selectOption(option) {
     }
 }
 
-// Function to display the cat image first, then cat-heart gif after clicking "Yes"
+// Function to display the cat image first
 function displayCat() {
     var imageContainer = document.getElementById('image-container');
     imageContainer.innerHTML = ''; // Clear any previous content
@@ -45,7 +49,6 @@ function displayCat() {
 // Function to display the cat-heart.gif after "Yes" is clicked
 function displayCatHeart() {
     var imageContainer = document.getElementById('image-container');
-    imageContainer.innerHTML = ''; // Clear any previous content
 
     var catHeartImage = new Image();
     catHeartImage.src = 'cat-heart.gif';  // Path for the "cat-heart" image
@@ -57,5 +60,20 @@ function displayCatHeart() {
     };
 }
 
-// Call displayCat() when the page loads
+// Call displayCat() when the page loads to show the first image
 window.onload = displayCat;
+
+// Function to display the cat-heart.gif after "Yes" is clicked
+function displayCatHeart() {
+    var imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = ''; // Clear any previous content
+
+    var catHeartImage = new Image();
+    catHeartImage.src = 'cat-heart.gif';  // Path for the "cat-heart" image
+    catHeartImage.alt = 'Cat Heart';
+
+    catHeartImage.onload = function() {
+        imageContainer.appendChild(catHeartImage); // Add the "cat-heart" gif to the image container
+        document.getElementById('options').style.display = 'none'; // Hide the options
+    };
+}
