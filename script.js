@@ -23,7 +23,7 @@ function selectOption(option) {
         message.style.zIndex = '100';        // Ensure it appears above other content
         document.body.appendChild(message); // Add the message to the body
 
-        console.log("Message created:", message); // Debugging line
+        console.log("Message created and added to the DOM:", message); // Debugging line
     } else if (option === 'no') {
         // Increase the font size of the "Yes" button
         var yesButton = document.getElementById('yes-button');
